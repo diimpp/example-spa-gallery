@@ -1,0 +1,16 @@
+Payever\Bundle\CoreBundle\Entity\Gallery:
+    exclusion_policy: ALL
+    xml_root_name: gallery
+    properties:
+        id:
+            expose: true
+            type: string
+        code:
+            expose: true
+            type: string
+        name:
+            expose: true
+            type: string
+        images:
+            expose: true
+            type: ArrayCollection<Payever\Bundle\CoreBundle\Entity\Image>

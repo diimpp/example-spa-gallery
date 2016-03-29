@@ -1,0 +1,10 @@
+Payever\Bundle\CoreBundle\Entity\Image:
+    exclusion_policy: ALL
+    xml_root_name: image
+    properties:
+        id:
+            expose: true
+            type: string
+        code:
+            expose: true
+            type: string

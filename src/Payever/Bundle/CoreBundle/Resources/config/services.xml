@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+
+<!--
+ This file is part of the diimpp/payever-gallery package.
+
+ (c) Dmitri Perunov
+
+ For the full copyright and license information, please view the LICENSE
+ file that was distributed with this source code.
+-->
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="payever.controller.gallery.class">Payever\Bundle\CoreBundle\Controller\GalleryController</parameter>
+        <parameter key="payever.controller.image.class">Payever\Bundle\CoreBundle\Controller\ImageController</parameter>
+
+        <parameter key="payever.model.gallery.class">Payever\Bundle\CoreBundle\Entity\Gallery</parameter>
+        <parameter key="payever.model.image.class">Payever\Bundle\CoreBundle\Entity\Image</parameter>
+
+        <parameter key="payever.repository.gallery.class">Doctrine\ORM\EntityRepository\EntityRepository</parameter>
+        <parameter key="payever.repository.image.class">Doctrine\ORM\EntityRepository\EntityRepository</parameter>
+    </parameters>
+
+    <services>
+        <service id="payever.controller.gallery" class="%payever.controller.gallery.class%">
+            <call method="setContainer">
+                <argument type="service" id="service_container" />
+            </call>
+        </service>
+        <service id="payever.controller.image" class="%payever.controller.image.class%">
+            <call method="setContainer">
+                <argument type="service" id="service_container" />
+            </call>
+        </service>
+
+        <service id="payever.repository.gallery" class="%payever.repository.gallery.class%">
+            <factory service="doctrine.orm.entity_manager" method="getRepository"/>
+            <argument>%payever.model.gallery.class%</argument>
+        </service>
+        <service id="payever.repository.image" class="%payever.repository.image.class%">
+            <factory service="doctrine.orm.entity_manager" method="getRepository"/>
+            <argument>%payever.model.image.class%</argument>
+        </service>
+    </services>
+
+</container>

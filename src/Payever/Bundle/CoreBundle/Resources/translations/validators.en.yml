@@ -1,0 +1,9 @@
+payever:
+    gallery:
+        code:
+            not_blank: Please enter gallery code.
+        name:
+            not_blank: Please enter gallery name.
+    image:
+        code:
+            not_blank: Please enter image code.

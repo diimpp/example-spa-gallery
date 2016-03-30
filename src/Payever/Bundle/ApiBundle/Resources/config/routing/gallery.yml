@@ -6,3 +6,9 @@ payever_api_gallery_index:
     methods: [GET]
     defaults:
         _controller: payever.controller.gallery:indexAction
+
+payever_api_gallery_create:
+    path: /
+    methods: [POST]
+    defaults:
+        _controller: payever.controller.gallery:createAction

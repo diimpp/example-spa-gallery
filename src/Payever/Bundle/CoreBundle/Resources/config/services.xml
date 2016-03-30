@@ -22,6 +22,8 @@
 
         <parameter key="payever.repository.gallery.class">Doctrine\ORM\EntityRepository\EntityRepository</parameter>
         <parameter key="payever.repository.image.class">Doctrine\ORM\EntityRepository\EntityRepository</parameter>
+
+        <parameter key="payever.form.type.gallery.class">Payever\Bundle\CoreBundle\Form\Type\GalleryType</parameter>
     </parameters>
 
     <services>
@@ -37,12 +39,16 @@
         </service>
 
         <service id="payever.repository.gallery" class="%payever.repository.gallery.class%">
-            <factory service="doctrine.orm.entity_manager" method="getRepository"/>
+            <factory service="doctrine.orm.entity_manager" method="getRepository" />
             <argument>%payever.model.gallery.class%</argument>
         </service>
         <service id="payever.repository.image" class="%payever.repository.image.class%">
-            <factory service="doctrine.orm.entity_manager" method="getRepository"/>
+            <factory service="doctrine.orm.entity_manager" method="getRepository" />
             <argument>%payever.model.image.class%</argument>
+        </service>
+
+        <service id="payever.form.type.gallery" class="%payever.form.type.gallery.class%">
+            <tag name="form.type" />
         </service>
     </services>
 

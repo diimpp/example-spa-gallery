@@ -12,8 +12,11 @@
 namespace Payever\Bundle\CoreBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Payever\Bundle\CoreBundle\Entity\Gallery;
+use Payever\Bundle\CoreBundle\Form\Type\GalleryType;
 
 /**
  * Gallery controller.
@@ -21,7 +24,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class GalleryController extends FOSRestController
 {
     /**
-     * List galleries.
+     * Lists galleries.
      *
      * @return Response
      */
@@ -29,11 +32,34 @@ class GalleryController extends FOSRestController
     {
         $galleries = $this->getGalleryRepository()->findAll();
 
-        $view = $this
-            ->view($galleries)
-            ;
+        $view = $this->view($galleries);
 
         return $this->handleView($view);
+    }
+
+    /**
+     * Creates gallery.
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
+    public function createAction(Request $request)
+    {
+        $gallery = new Gallery();
+        $form = $this->get('form.factory')->create(GalleryType::class, $gallery);
+
+        if ($request->isMethod('POST') && $form->submit($request)->isValid()) {
+            $gallery = $form->getData();
+
+            $em = $this->get('doctrine.orm.entity_manager');
+            $em->persist($gallery);
+            $em->flush();
+
+            return $this->handleView($this->view($gallery, 201));
+        }
+
+        return $this->handleView($this->view($form, 400));
     }
 
     /**

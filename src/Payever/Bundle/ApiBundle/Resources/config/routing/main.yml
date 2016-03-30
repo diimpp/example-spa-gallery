@@ -2,9 +2,9 @@
 # (c) Dmitri Perunov
 
 payever_api_gallery:
-    resource: @PayeverApiBundle/Resources/config/routing/gallery.yml
+    resource: "@PayeverApiBundle/Resources/config/routing/gallery.yml"
     prefix: /galleries
 
 payever_api_image:
-    resource: @PayeverApiBundle/Resources/config/routing/image.yml
+    resource: "@PayeverApiBundle/Resources/config/routing/image.yml"
     prefix: /images

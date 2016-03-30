@@ -1,0 +1,14 @@
+[
+  {
+    "id": @number@,
+    "code": "image1"
+  },
+  {
+    "id": @number@,
+    "code": "image2"
+  },
+  {
+    "id": @number@,
+    "code": "image3"
+  }
+]

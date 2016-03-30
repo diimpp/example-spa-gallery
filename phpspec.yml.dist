@@ -1,0 +1,2 @@
+suites:
+    CoreBundle: { namespace: Payever\Bundle\CoreBundle, psr4_prefix: Payever\Bundle\CoreBundle, spec_path: src/Payever/Bundle/CoreBundle, src_path: src/Payever/Bundle/CoreBundle }

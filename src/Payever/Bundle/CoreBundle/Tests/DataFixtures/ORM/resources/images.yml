@@ -1,0 +1,3 @@
+Payever\Bundle\CoreBundle\Entity\Image:
+    gallery_{1..3}:
+        code: image<current()>

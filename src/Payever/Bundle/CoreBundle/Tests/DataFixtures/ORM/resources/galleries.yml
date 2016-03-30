@@ -1,0 +1,4 @@
+Payever\Bundle\CoreBundle\Entity\Gallery:
+    gallery_{1..3}:
+        code: gallery<current()>
+        name: <sentence($nbWords = 6)>

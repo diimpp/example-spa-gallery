@@ -1,0 +1,20 @@
+[
+  {
+    "id": @number@,
+    "code": "gallery1",
+    "name": @string@,
+    "images": @array@
+  },
+  {
+    "id": @number@,
+    "code": "gallery2",
+    "name": @string@,
+    "images": @array@
+  },
+  {
+    "id": @number@,
+    "code": "gallery3",
+    "name": @string@,
+    "images": @array@
+  }
+]

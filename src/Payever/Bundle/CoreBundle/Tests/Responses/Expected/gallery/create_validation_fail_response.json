@@ -1,0 +1,18 @@
+{
+  "code": 400,
+  "message": "Validation Failed",
+  "errors": {
+    "children": {
+      "code": {
+        "errors": [
+          "Please enter gallery code."
+        ]
+      },
+      "name": {
+        "errors": [
+          "Please enter gallery name."
+        ]
+      }
+    }
+  }
+}

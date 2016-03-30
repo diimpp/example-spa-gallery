@@ -1,0 +1,6 @@
+{
+  "id": @number@,
+  "code": "gallery3",
+  "name": "Images gallery #3",
+  "images": @array@
+}

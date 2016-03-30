@@ -31,13 +31,10 @@ class GalleryType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver
-            ->setDefaults(
-                [
-                    'data_class' => Gallery::class,
-                    'csrf_protection' => false,
-                ]
-            )
-        ;
+            ->setDefaults([
+                'data_class' => Gallery::class,
+                'csrf_protection' => false,
+            ]);
     }
 
     /**
